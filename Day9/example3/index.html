@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>C.R.U.D</title>
+    <link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="../../jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../../handlebars.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <style type="text/css">
+    .hideIt {
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <h1 class="text-center">ToDo App</h1>
+            <button id="add" class="btn btn-default btn-success navbar-btn pull-right">Add ToDO</button>
+        </div>
+    </nav>
+    <div id="notodo" class="row">
+        <h1 class="text-center text-warning">There are no To-Dos. Try adding some!</h1>
+    </div>
+    <div class="container">
+    </div>
+    <script id="todoRow" type="text/x-handlebars-template">
+        <div class="row"></div>
+    </script>
+    <script id="todoRowEnd" type="text/x-handlebars-template">
+        <div class="row">
+            <hr>
+        </div>
+    </script>
+    <!-- The UL LI structure may give a better performance! -->
+
+    <script id="todo" type="text/x-handlebars-template">
+        <div class="myRow row">
+            <div class="col-md-1 col-sm-1 col-xs-1 checkbox">
+                <input type="checkbox" {{#if completed}} checked {{/if}} />
+            </div>
+            <div class="col-md-8 col-sm-8 col-xs-9">
+                <p>{{title}}</p>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-2">
+                <div class="btn-group" role="group" aria-label="ToDo Manipulate">
+                    <button type="button" class="btn btn-default btn-primary">Edit</button>
+                    <button type="button" class="btn btn-default btn-danger">Delete</button>
+                </div>
+            </div>
+        </div>
+    </script>
+    <script id="newtodo" type="text/x-handlebars-template">
+        <div class="col-md-offset-1 col-md-6">
+            <input type="text" class="form-control" placeholder="Add To Do" />
+        </div>
+    </script>
+</body>
+
+</html>

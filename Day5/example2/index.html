@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Fibonacci</title>
+</head>
+<body>
+<script type="text/javascript">
+	function gen_fibonacci (val) {
+		if(val === 0 || val === 1){
+			return 1;
+		} else {
+			return val*gen_fibonacci(val-1);
+		}
+	}
+	function fibonacci(val){
+		if(typeof val === "number" && val !== "NaN" && val >= 0){
+			//return fibonacci(val);
+			console.log("fibonacci(", val, ') =', gen_fibonacci(val));
+		}else{
+			console.log('', JSON.stringify(val), "is not a valid input");
+		}
+	}
+	fibonacci("ABCDE");
+	fibonacci("Able Elba");
+	fibonacci(1);
+	fibonacci([]);
+	fibonacci(-1);
+	fibonacci(5);
+	fibonacci(0);
+	fibonacci(true);
+	fibonacci(false);
+	fibonacci("");
+	fibonacci({});
+	fibonacci(NaN);
+	fibonacci(undefined);
+</script>
+</body>
+</html>

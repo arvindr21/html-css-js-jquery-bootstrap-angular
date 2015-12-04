@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flipkart New</title>
+	<link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="../../jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../handlebars.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-2"></div>
+		<div id="prods" class="col-md-offset-1 col-md-8">
+		</div>
+	</div>
+</div>
+
+
+<script id="newRow" type="text/x-handlebars-template"><div class="row"></div></script>
+<script id="prod" type="text/x-handlebars-template">
+<div class="col-md-3">
+    <div class="row">
+        <img src="{{prodPicture}}">
+    </div>
+    <div class="row">
+        <h4>{{prodName}}</h4>
+    </div>
+    <div class="row">
+        <hr>
+    </div>
+    <div class="row">
+        <label>Rs. {{prodPrice}}</label>
+    </div>
+    <div class="row">
+        <label>EMI from Rs. {{prodEMI}}</label>
+    </div>
+    <div class="row">
+        <hr>
+    </div>
+    <div class="row">
+        <label><u>{{prodSellers}} Sellers</u> from Rs {{prodOfferPrice}}</label>
+    </div>
+    <div class="row">
+        <hr>
+    </div>
+    <div class="row">
+        <ul class="text-small">
+        {{#each this.prodFeatures}}
+            <li> {{ this }} </li>
+        {{/each}}
+        </ul>
+    </div>
+    <div class="row">
+        <hr>
+    </div>
+    <div class="row checkbox">
+        <input type="checkbox" name="{{prodShortName}}" />
+        <label>Add to Compare</label>
+    </div>
+</div>
+	
+
+</script>
+</body>
+</html>

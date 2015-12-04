@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>USer Template</title>
+    <link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="../../jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../handlebars.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <style type="text/css">
+		.addSp{
+			margin-bottom: 24px;
+		}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    </div>
+    <script id="user-row" type="text/x-handlebars-template">
+    <div class="row"></div>
+    </script>
+    <script id="user" type="text/x-handlebars-template">
+            <div class="col-xs-4 col-sm-2 col-md-2 addSp">
+                <img src="{{picture}}" alt="" class="userPic" />
+            </div>
+            <div class="col-xs-8 col-sm-4 col-md-4 addSp">
+                <blockquote>
+                    <p>{{name}}</p>
+                    <small><cite title="Source Title">{{address}}  <i class="glyphicon glyphicon-map-marker"></i></cite></small>
+                </blockquote>
+                <p class="text-justify"> <i class="glyphicon glyphicon-envelope"></i> {{email}}
+                    <br /> <i class="glyphicon glyphicon-globe"></i> <small class="text-justify">{{about}}</small>
+                    <br /> <i class="glyphicon glyphicon-gift"></i> Age: {{age}}</p>
+            </div>
+    </script>
+</body>
+
+</html>

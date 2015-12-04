@@ -1,0 +1,18 @@
+<div>
+    <h2>Book Movie Tickets</h2>
+    <input type="text" ng-model="search" class="form-control" placeholder="Search for a movie">
+    <div class="row list">
+        <div class="col-md-4" ng-repeat="movie in movieData | orderBy:'name' | filter:search">
+            <h4>{{movie.name | uppercase}}</h4>
+            <p>
+                <img width="146" height="218" ng-src="{{movie.thumb}}" alt="{{movie.name}}" />
+            </p>
+            <p>{{movie.review | limitTo:99}}</p>
+            <p>
+                <label class="btn btn-warning">Avaiability <span class="badge">{{movie.availability}}</span></label>
+                <span><a role="button" class="btn btn-success" ng-href="#/movie/{{ movie.id }}">Review</a></span>
+                <span><a role="button" class="btn btn-primary" ng-href="#/book/{{ movie.id }}">Book »</a></span>
+            </p>
+        </div>
+    </div>
+</div>

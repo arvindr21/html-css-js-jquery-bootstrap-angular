@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+
+<head>
+    <title>Custom Directives</title>
+    <script type="text/javascript" src="../../angular.min.js"></script>
+    <script type="text/javascript">
+    var myApp = angular.module("MyApp", []);
+    myApp.directive("printThis", function() {
+    	return {
+        	restrict: "AEC",
+        	template: "<input type='text' ng-model='txt'/><label>{{txt}}</label>",
+        	//scope: {}, // Used to isolate scope
+        	scope: {
+        		txt: '@print', // Use print text and initialize the txt model
+        		// If dom also used attr txt, omit the name from rhs
+        		notif: '&notif',
+        	},
+        	link: function(s, e, a) {
+        		// s.printHelloLocal = function(){ // This would not work
+        		// 	console.log("Child Scope Hello");
+        		// };
+        		console.log(s,e,a);
+          //   	console.log(a.print);
+            	s.notif();
+        	}
+        }
+    });
+    myApp.directive('name', [function () {
+    	return {
+    		priority: 0,
+    		template: '<div></div>',
+    		templateUrl: 'directive.html',
+    		replace: true,
+    		transclude: true,
+    		restrict: 'A',
+    		scope: {},
+    		controller: function($scope, $element, $attrs, $transclude, otherInjectables) {
+    
+    		},
+    		compile: function compile(tElement, tAttrs, transclude) {
+    			return function postLink(scope, iElement, iAttrs, controller) {
+    
+    			}
+    		},
+    		link: function postLink(scope, iElement, iAttrs) {
+    
+    		}
+    	};
+    }])
+    myApp.controller("MyCtrl", function($scope){
+    	console.log("MyCtrl");
+    	$scope.printHello = function(){
+    		console.log("Hello There!");
+    	}
+    });
+    </script>
+</head>
+
+<body>
+<div ng-controller="MyCtrl">
+	<div>
+    <div print-this print="Hi, I am an attribute" notif="printHello()"></div>
+    <div class="print-this" print="I am a class" notif="printHelloLocal()"></div>
+    <print-this print="I am an element too" />
+    </div>
+</div>
+</body>
+
+</html>

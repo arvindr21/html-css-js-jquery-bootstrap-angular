@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Strings</title>
+</head>
+<body>
+<script type="text/javascript">
+	function isVowel (val) {
+		if ( typeof val === "string" && val.length === 1 ){
+			// var vow = "aeiou";
+			// if(vow.indexOf(val.toLowerCase()) !== -1){
+			// 		return true;
+			// }
+			switch(val.toLowerCase()){
+				case 'a':
+				case 'e':
+				case 'i':
+				case 'o':
+				case 'u': return true;
+				default: return false;
+			}
+		}
+		else
+		{
+
+			console.log(JSON.stringify(val) + " is not a character input. Please check");
+			return false;
+		}
+	}
+	console.log(isVowel('A'));
+	console.log(isVowel('Assddff'));
+	console.log(isVowel('1'));
+	console.log(isVowel(1));
+	console.log(isVowel(0));
+	console.log(isVowel(true));
+	console.log(isVowel(false));
+	console.log(isVowel(null));
+	console.log(isVowel(undefined));
+	console.log(isVowel(NaN));
+	console.log(isVowel(''));
+	console.log(isVowel(-1));
+	console.log(isVowel([]));
+	console.log(isVowel([1,2]));
+	console.log(isVowel({}));
+	console.log(isVowel('u'));
+</script>
+</body>
+</html>

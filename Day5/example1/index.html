@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Palindrome</title>
+</head>
+<body>
+<script type="text/javascript">
+	function palindrome(val){
+		if ( typeof val === "string" && val.length > 1){
+			if(val.toLowerCase() === val.toLowerCase().split('').reverse().join('')){
+				console.log(val, "is a palindrome");
+			}else{
+				console.log(val, "is not a palindrome");
+			}
+		}else if (val && typeof val === "number"){
+				var strRep = val.toString();
+				if(strRep.length > 1 && strRep === strRep.split('').reverse().join('')){
+					console.log(val + " is a palindrome");
+				}else{
+					console.log(val + " is not a palindrome");
+				}
+		}else{
+			console.log(JSON.stringify(val), "is not a proper input");
+		}
+	}
+	console.log(palindrome("ABCDE"));
+	console.log(palindrome("Able Elba"));
+	console.log(palindrome(1));
+	console.log(palindrome([]));
+	console.log(palindrome(-1));
+	console.log(palindrome(0));
+	console.log(palindrome(true));
+	console.log(palindrome(false));
+	console.log(palindrome(""));
+	console.log(palindrome({}));
+	console.log(palindrome(NaN));
+	console.log(palindrome(undefined));
+	console.log(palindrome(1221));
+</script>
+</body>
+</html>

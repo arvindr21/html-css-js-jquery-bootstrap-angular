@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+</head>
+
+<body ng-app="starter">
+    <!-- <ion-pane>
+      <ion-header-bar class="bar-royal">
+        <h1 class="title">Router App</h1>
+      </ion-header-bar>
+      <ion-nav-view class="has-header"></ion-nav-view>
+    </ion-pane> -->
+    <ion-nav-bar></ion-nav-bar>
+    <ion-nav-view class="has-header"></ion-nav-view>
+    <script type="text/ng-template" id="view1.html">
+        <ion-view view-title="View 1">
+            
+            <button class="button button-full button-calm" ui-sref="view2">Go to View 2</button>
+        </ion-view>
+    </script>
+    <script type="text/ng-template" id="view2.html">
+        <ion-view view-title="View 2">
+            
+            <button class="button button-full button-calm" ui-sref="view1">Go to View 1</button>
+        </ion-view>
+    </script>
+</body>
+
+</html>

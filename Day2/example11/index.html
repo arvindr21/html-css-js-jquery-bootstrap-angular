@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Layouts</title>
+	<style type="text/css">
+	.wrapper{
+		width: 100%;
+	}
+	.full-container{
+		width: 100%;
+		margin: 5px;
+	}
+	.grey{
+		background-color: #666;
+	}
+	.full-length{
+		height: 100%;
+	}
+	.head{
+		height: 40px;
+	}
+	.heading{
+		width: 20%;
+		display: inline-block;
+		float: left;
+		
+	}
+	.navi{
+		width: 40%;
+		display: inline-block;
+		float: right;
+	}
+	.sub-container{
+		height: 500px;
+	}
+	.col-right{
+		width: 56%;
+		display: inline-block;
+		float: right;
+	}
+	.col-left{
+		width: 43%;
+		display: inline-block;
+		float: left;
+	}
+	.big-top{
+		clear: both;
+		width: 100%;
+		height: 50%;
+		
+	}
+	.small-down{
+		clear: both;
+		width: 100%;
+		height: 30%;
+		margin-top: 5px;
+	}
+	.footer{
+		height: 40px;
+	}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<div class="head full-container">
+		<div class="heading grey full-length"></div>
+		<div class="navi grey full-length"></div>
+	</div>
+	<div class="sub-container full-container">
+		<div class="col-left full-length">
+			<div class="grey big-top"></div>
+			<div class="grey small-down"></div>
+		</div>
+		<div class="col-right full-length grey">
+		</div>
+	</div>
+	<div class="footer full-container grey"></div>
+</div>
+</body>
+</html>

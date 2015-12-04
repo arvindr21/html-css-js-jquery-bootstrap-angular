@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Reverse</title>
+</head>
+<body>
+<script type="text/javascript">
+	function reverse_singleLine (val) {
+		if(typeof val === "string" && val.length >= 1){
+			// val = val.split('');
+			// val = val.reverse();
+			// val = val.join('');
+			// console.log(val);
+			console.log(((val.split('')).reverse()).join(''));
+		}
+		else{
+			console.log("Not a string. Please give proper input!");
+		}
+	}
+	function reverse(val){
+		if(typeof val === "string" && val.length > 0){
+			var len = val.length;
+			var halfLen = Math.floor(len/2);
+			var extraChr = len & 1;
+			var swap = new Array;
+			//val = val.split("");
+			for(var index = 0, endIdx = len-index - 1; index < halfLen; index++, endIdx--){
+				swap[index] = val[endIdx];
+				swap[endIdx] = val[index];
+				//val[index] = swapChr;
+			}
+			if(extraChr){
+				swap[index] = val[index];
+			}
+			//val = val.join("");
+			swap = swap.join('');
+			console.log(swap);
+		}else{
+			console.log("Not a string. Please give proper input!");
+		}
+	}
+	function reverse_n_Iter(val){
+		if(typeof val === "string" && val.length > 0){
+			var revStr = '';
+			for(var len = val.length - 1; len >= 0; len--){
+				revStr += val[len];
+			}
+			console.log(revStr);
+		}else{
+			console.log("Not a string. Please give proper input!");
+		}
+	}
+	console.log(reverse("ABCDE"));
+	console.log(reverse("ABDE"));
+	console.log(reverse(1));
+	console.log(reverse([]));
+	console.log(reverse(-1));
+	console.log(reverse(0));
+	console.log(reverse(true));
+	console.log(reverse(false));
+	console.log(reverse(""));
+	console.log(reverse({}));
+	console.log(reverse(NaN));
+	console.log(reverse(undefined));
+</script>
+</body>
+</html>

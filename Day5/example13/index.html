@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Coins</title>
+</head>
+<body>
+<script type="text/javascript">
+	
+	function convert (val, base) {
+		
+		var count = {
+			50: 0, 25:0, 10:0, 5:0, 2:0, 1:0
+		};
+		var main = 0, left = val;
+		for(var i = 0; i < base.length && left; i++){
+			main = Math.floor(left / base[i]);
+			count[base[i]] = main;
+			left -= main * base[i];
+		}
+		console.log(val + " = " , count);
+	}
+	
+	// convert(50);
+	// convert(46);
+	// convert(10);
+	// convert(12);
+	// convert(1);
+
+	function combi_convert(val, base){
+		convert(val, base);
+		convert(val, base.slice(1,5));
+		convert(val, base.slice(2,5));
+	}
+	combi_convert(46, [25,10,5,2,1]);
+</script>
+</body>
+</html>

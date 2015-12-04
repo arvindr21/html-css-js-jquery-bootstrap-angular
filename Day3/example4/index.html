@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flipkart Dummy</title>
+	<!-- <link rel="stylesheet" type="text/css" href="cssreset.css"/> -->
+	<style type="text/css">
+	.container{
+		width: 100%;
+		clear:both;
+	}
+	.border-top{
+		border-top: 2px solid #555;
+	}
+	.inline{
+		display: inline-block;
+		overflow: hidden;
+	}
+	.right{
+		float: right;
+	}
+	.catalog{
+		width: 25%;
+	}
+	.store-items{
+		
+		width: 73%;
+	}
+	h4.style {
+		color: #333;
+	    text-shadow: 0 0 0 #000;
+	    font-weight: normal;
+	    font-size: 15px;
+	    
+	}
+	.clear{
+		clear:both;
+	}
+	.offers{
+		background-color: #fcdb1a;
+		padding: 10px;
+	}
+	.greyTxt{
+		color: #aaa;
+	}
+	.caps{
+		text-transform: uppercase;
+	}
+	.blueTxt{
+		color: #177ad4;
+	}
+	.outline{
+		border: 1px solid #177ad4;
+		padding: 5px;
+		border-radius: 5px;
+	}
+	.smallcaps{
+		font-size: 80%;
+	}
+	.refine ul li, .browse ul li{
+		list-style: none;
+		padding: 0px;
+		padding-bottom: 5px;
+	}
+	.border-bottom{
+		border-bottom: 1px solid #777;
+	}
+	.cell{
+		width: 20%;
+		height: 400px;
+		padding: 10px;
+		margin-right: 5px;
+		cursor: pointer;
+		padding-top: 10px;
+	}
+	.cell:hover{
+		border: 1px solid yellow;
+	}
+	.center{
+		text-align: center;
+	}
+	.heading a , .browse a, .offers a{
+		text-decoration: none;
+	}
+	.cell a:hover, .offers a:hover, .underlined{
+		text-decoration: underline;
+	}
+	.border-bottom-dotted{
+		border-bottom: 1px dotted black;
+	}
+	.txt-contents p, .txt-contents li{
+		font-size: 60%;
+		font-family: "Arial Narrow"
+	}
+	.dir-right{
+		direction: rtl;
+	}
+	.no-border{
+		border: none;
+	}
+	</style>
+</head>
+<body>
+<div class="container">
+	<div class="catalog border-top inline">
+		<div class="browse clear">
+			<h4 class="style caps">Browse</h3>
+			<select class="dir-right no-border" name="accesories">
+				<option>Mobiles &amp; Accessories</option>
+			</select>
+			<ul>
+				<li><a href="">Mobiles</a></li>
+			</ul>
+		</div>
+		<div class="offers">
+			<h4 class="style">Looking for Offers?</h4>
+			<p class="greyTxt">All the Great Offers you wish for, now on the Flipkart App!</p>
+			<a class="blueTxt smallcaps outline caps" href="">Open in App</a>
+		</div>
+		<div class="refine">
+			<div class="border-bottom">
+				<h4 class="style caps">Fulfilled By</h3>
+				<ul>
+					<li><input type="checkbox" name="fulfil" /><label>FlipKart Advantage</label></li>
+				</ul>
+			</div>
+			<div class="border-bottom">
+				<h4 class="style caps">Price</h3>
+				<ul>
+					<li><input type="checkbox" name="price" /><label>Rs. 2000 and below</label></li>
+					<li><input type="checkbox" name="price" /><label>Rs. 2001 and Rs. 5000</label></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="store-items border-top right">
+		<div class="container">
+			<div class="cell inline">
+				<div class="border-bottom">
+					<div class="heading">
+						<div class="center">
+						<img src="./images/galaxyJ7.jpeg">
+						</div>
+						<a class="greyTxt" href="">Samsung Galaxy J7 (Gold 16GB)</a>
+					</div>
+				</div>
+				<div class="txt-contents">
+					<div class="border-bottom-dotted">
+						<h4>Rs. 14,999</h4>
+						<p>EMI from Rs. 728</p>
+					</div>
+					<div class="border-bottom">
+						<p><a class="underlined">19 Sellers</a> from Rs 14,900</p>
+					</div>
+					<div class="border-bottom">
+					<ul>
+						<li>5.5 Inch Display</li>
+						<li>Dual SIM (LTE + GSM)</li>
+						<li>13 MP |5 MP Camera</li>
+						<li>Octa Core Processor</li>
+					</ul>
+					</div>
+					<div>
+						<input type="checkbox" name="j7Gold"/><label>Add to Compare</label>
+					</div>
+				</div>
+			</div>
+			<div class="cell inline">
+				<div class="border-bottom">
+					<div class="heading">
+						<div class="center">
+						<img src="./images/galaxyJ5.jpeg">
+						</div>
+						<a class="greyTxt" href="">Samsung Galaxy J5 (Gold 8GB)</a>
+					</div>
+				</div>
+				<div class="txt-contents">
+					<div class="border-bottom-dotted">
+						<h4>Rs. 14,999</h4>
+						<p>EMI from Rs. 601</p>
+					</div>
+					<div class="border-bottom">
+						<p><a class="underlined">32 Sellers</a> from Rs 12,299</p>
+					</div>
+					<div class="border-bottom">
+					<ul>
+						<li>5.5 Inch Display</li>
+						<li>Dual SIM (LTE + GSM)</li>
+						<li>13 MP |5 MP Camera</li>
+						<li>2600 mAh Battery</li>
+					</ul>
+					</div>
+					<div>
+						<input type="checkbox" name="j5Gold"/><label>Add to Compare</label>
+					</div>
+				</div>
+			</div>
+			<div class="cell inline">
+				<div class="border-bottom-dotted">
+					<div class="center">
+					<img src="./images/galaxyJ5White.jpeg">
+					</div>
+					<a class="greyTxt" href="">Samsung Galaxy J5 (White 8GB)</a>
+				</div>
+				<div class="txt-contents">
+					<div class="border-bottom-dotted">
+						<h4>Rs. 12,390</h4>
+						<p>EMI from Rs. 601</p>
+					</div>
+					<div class="border-bottom-dotted">
+						<p><a class="underlined">33 Sellers</a> from Rs 12,000</p>
+					</div>
+					<div class="border-bottom-dotted">
+					<ul>
+						<li>5.5 Inch Display</li>
+						<li>Dual SIM (LTE + GSM)</li>
+						<li>13 MP |5 MP Camera</li>
+						<li>2600 mAh Battery</li>
+					</ul>
+					</div>
+					<div>
+						<input type="checkbox" name="j7Gold"/><label>Add to Compare</label>
+					</div>
+				</div>
+			</div>
+			<div class="cell inline">
+				<div class="border-bottom-dotted">
+					<div class="center">
+					<img src="./images/galaxyJ5Black.jpeg">
+					</div>
+					<a class="greyTxt" href="">Samsung Galaxy J5 (Black 8GB)</a>
+				</div>
+				<div class="txt-contents">
+					<div class="border-bottom-dotted">
+						<h4>Rs. 12,390</h4>
+						<p>EMI from Rs. 601</p>
+					</div>
+					<div class="border-bottom-dotted">
+						<p><a class="underlined">33 Sellers</a> from Rs 12,000</p>
+					</div>
+					<div class="border-bottom-dotted">
+					<ul>
+						<li>5.5 Inch Display</li>
+						<li>Dual SIM (LTE + GSM)</li>
+						<li>13 MP |5 MP Camera</li>
+						<li>2600 mAh Battery</li>
+					</ul>
+					</div>
+					<div>
+						<input type="checkbox" name="j7Gold"/><label>Add to Compare</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="cell inline">
+				<div class="border-bottom-dotted">
+					<div class="center">
+					<img src="./images/galaxyA8.jpeg">
+					</div>
+					<a class="greyTxt" href="">Samsung Galaxy A8 (Gold 32GB)</a>
+				</div>
+				<div class="txt-contents">
+					<div class="border-bottom-dotted">
+						<h4>Rs. 31,490</h4>
+						<p>EMI from Rs. 1,527</p>
+					</div>
+					<div class="border-bottom-dotted">
+						<p><a class="underlined">33 Sellers</a> from Rs 30,190</p>
+					</div>
+					<div class="border-bottom-dotted">
+					<ul>
+						<li>Android v5.1.1 OS</li>
+						<li>16 MP Primary Camera</li>
+						<li>5 MP Secondary Camera</li>
+						<li>5.7 inch Touchscreen</li>
+					</ul>
+					</div>
+					<div>
+						<input type="checkbox" name="A8Gold"/><label>Add to Compare</label>
+					</div>
+				</div>
+			</div>
+			<div class="cell inline">
+				<div class="border-bottom-dotted">
+					<div class="center">
+					<img src="./images/galaxyA7.jpeg">
+					</div>
+					<a class="greyTxt" href="">Samsung Galaxy A7 (Champagne Gold 16GB)</a>
+				</div>
+				<div class="txt-contents">
+					<div class="border-bottom-dotted">
+						<h4>Rs. 27,500</h4>
+						<p>EMI from Rs. 1,334</p>
+					</div>
+					<div class="border-bottom-dotted">
+						<p><a class="underlined">33 Sellers</a> from Rs 22,650</p>
+					</div>
+					<div class="border-bottom-dotted">
+					<ul>
+						<li>13 MP Primary Camera</li>
+						<li>5.5 inch AMOLED Screen</li>
+						<li>5MP Secondary Camera</li>
+						<li>Android v4.4 OS</li>
+					</ul>
+					</div>
+					<div>
+						<input type="checkbox" name="A7Gold"/><label>Add to Compare</label>
+					</div>
+				</div>
+			</div>
+			<div class="cell inline">
+				<div class="border-bottom-dotted">
+					<div class="center">
+					<img src="./images/galaxyA7Pearl.jpeg">
+					</div>
+					<a class="greyTxt" href="">Samsung Galaxy A7 (Pearl White 16GB)</a>
+				</div>
+				<div class="txt-contents">
+					<div class="border-bottom-dotted">
+						<h4>Rs. 25,990</h4>
+						<p>EMI from Rs. 1,261</p>
+					</div>
+					<div class="border-bottom-dotted">
+						<p><a class="underlined">32 Sellers</a> from Rs 21,799</p>
+					</div>
+					<div class="border-bottom-dotted">
+					<ul>
+						<li>5.5 inch Touchscreen</li>
+						<li>Android v4.4 OS</li>
+						<li>13 MP Primary Camera</li>
+						<li>5MP Secondary Camera</li>
+					</ul>
+					</div>
+					<div>
+						<input type="checkbox" name="A7Pearl"/><label>Add to Compare</label>
+					</div>
+				</div>
+			</div>
+			<div class="cell inline">
+				<div class="border-bottom-dotted">
+					<div class="center">
+					<img src="./images/galaxyA5.jpeg">
+					</div>
+					<div>
+					<a class="greyTxt" href="">Samsung Galaxy A5 (Pearl White 16GB)</a></div>
+				</div>
+				<div class="txt-contents">
+					<div class="min-cell border-bottom-dotted">
+						<h4>Rs. 25,225</h4>
+						<p>EMI from Rs. 1,224</p>
+					</div>
+					<div class="border-bottom-dotted">
+						<p><a class="underlined">45 Sellers</a> from Rs 17,999</p>
+					</div>
+					<div class="border-bottom-dotted">
+					<ul>
+						<li>Android v4.4 OS</li>
+						<li>13 MP Primary Camera</li>
+						<li>5MP Secondary Camera</li>
+						<li>Dual Sim (GSM + LTE)</li>
+					</ul>
+					</div>
+					<div>
+						<input type="checkbox" name="A5"/><label>Add to Compare</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

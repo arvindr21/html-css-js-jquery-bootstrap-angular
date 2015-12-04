@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Append</title>
+	<script type="text/javascript" src="../../jquery-2.1.4.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function () {
+		$('ul').append("<li id='one'>Append</li>"); //On both lists
+		$('ul').prepend("<li>Prepend</li>"); //On both lists
+		$('#one').before("<li>Before</li>"); // Only on first LI
+		$('#one').after("<li>After</li>"); // Only on first LI
+	});
+	</script>
+</head>
+<body>
+	<p>UL One</p>
+	<ul></ul>
+	<p>UL Two</p>
+	<ul></ul>
+</body>
+</html>

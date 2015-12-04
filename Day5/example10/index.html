@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FizzBuzz</title>
+</head>
+<body>
+<script type="text/javascript">
+	function fizzBuzz () {
+		var mod3, mod5, both;
+		var msg = "";
+		for(var i = 1; i <= 100; i++){
+			mod3 = i % 3;
+			mod5 = i % 5;
+			both = !mod3 && !mod5;
+			msg = i;
+			if(!mod3){
+				msg = "Fizz";
+			}
+			if(!mod5){
+				msg = "Buzz";
+			}
+			if(both){
+				msg = "FizzBuzz";
+			}
+			console.log(msg);
+		}
+	}
+	fizzBuzz();
+</script>
+</body>
+</html>

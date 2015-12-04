@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IIFE</title>
+</head>
+<body>
+<script type="text/javascript">
+	// Immediately Invked Function Expr
+	(function hello () {
+		console.log('Hello');
+		// Can be called from here!
+	})();
+	//hello();
+	// Can't be clled outside the scope
+
+	function getSum(){
+		var inp =  Array.prototype.slice.call(arguments); // Convert to array and do it
+		var len = inp.length;
+		var sum = 0;
+		inp.forEach(function(e,i,list){
+			sum += e;
+		});
+		return sum;
+	}
+
+	function sum(){
+		//console.log(typeof arguments);// Object
+		var args = arguments;
+		var keys = Object.keys(arguments);
+		console.log("Keys in arguments:", keys);
+		keys.forEach(function(e,i,l){
+			
+			console.log("->", e, ":", args[e]);
+		});
+		var sum = 0;
+		var len = arguments.length; // Directly access and do it
+		for(var i= 0; i < len; i++){
+			sum += arguments[i];
+		}
+		return sum;
+	}
+	console.log("Sum =", sum(1));
+	console.log("Sum =", sum(1,2,3,55,56));
+</script>
+</body>
+</html>

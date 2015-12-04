@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Unique chars</title>
+</head>
+<body>
+<script type="text/javascript">
+	function extractUnique (myStr) {
+		if(typeof myStr === "string" && myStr.length > 0){
+			var str = myStr.split('');
+			// var out = [];
+			// str.forEach(function(e,i,l){
+			// 	if(out.indexOf(e) === -1){
+			// 		out.push(e);
+			// 	}
+			// });
+			var out = str.filter(function(e,i,l){
+				return l.indexOf(e) === i;
+			}).join('');
+			out = out.split(' ').join('');
+			console.log(out);
+		}else{
+			console.log(JSON.stringify(myStr) + " is not a valid input");
+		}
+	}
+	extractUnique('Hi There!');
+	extractUnique('Text1 Text2');
+	extractUnique('Help!');
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Odd or Even</title>
+</head>
+<body>
+<script type="text/javascript">
+	
+	function isOdd (val) {
+		if(typeof val === "number"){
+			if ((val === "NaN")){
+				return false;
+			}
+			if (val % 2 === 1 ){
+				return true;
+			}
+			return false;
+		} else {
+			return false;
+		}
+	}
+	var x;
+	console.log(isOdd(1));
+	console.log(isOdd(-1));
+	console.log(isOdd(2));
+	console.log(isOdd(0));
+	console.log(isOdd('1'));
+	console.log(isOdd(x));
+	console.log(isOdd(true));
+	console.log(isOdd(false));
+	console.log(isOdd(NaN));
+	console.log(isOdd(null));
+	console.log(isOdd(''));
+	console.log(isOdd(2.1));
+</script>
+</body>
+</html>

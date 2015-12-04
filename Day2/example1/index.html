@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Styling Text</title>
+	<style type="text/css">
+		h1{
+			color: blue;
+		}
+		.ridiculous-text {
+			font-size: 30px;
+			font-family: "Lucida";
+		}
+		#highlight {
+			border-bottom: 1px dotted red;
+		}
+		*{
+			/*border: 2px solid red;
+			margin: 0 auto;*/
+		}
+
+		label{
+			color: fuchsia;
+		}
+		p label {
+			color: red;
+		}
+		div > label{ /* Immediate Child */
+			color: green;
+		}
+		p + label {
+			color: yellow;
+		}
+		ul li{
+			list-style-type: none;
+		}
+		[href] {
+			color: black;
+		}
+		[href='http://yahoo.com']{
+			color: pink;
+		}
+		ul,ol{
+			font-size: 15pt;
+		}
+	</style>
+</head>
+<body>
+	<h1>My Page</h1>
+	<p class="ridiculous-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in <span id="highlight">culpa qui</span> officia deserunt mollit anim id est laborum.</p>
+
+	<p>
+		<label>Inside p tag</label>
+		<p>
+			<label>Inside pp tag</label>
+			<div>
+				<label>Inside p div tag</label><br>
+				<label>Second label inside div</label>
+			</div>
+		</p>
+	</p>
+	<label>Outside all tags</label>
+	<label>Outside all tags 2</label>
+	<ul>
+		<li>Item 1
+		<ol>
+			<li>Item 1.1</li>
+		</ol>
+		</li>
+	</ul>
+	<a href="http://google.com">Google</a>
+	<a href="http://yahoo.com">Yahoo</a>
+	<a href="http://bing.com">Bing</a>
+</body>
+</html>

@@ -1,0 +1,73 @@
+	* {
+	    /* Optional, but will give a more uniform look */
+	    margin: 0px;
+	    padding: 0px;
+	}
+	
+	body {
+	    /* Optional, but will give a more uniform look */
+	    margin: 0 12px;
+	}
+	
+	nav {
+	    border-radius: 6px;
+	    /* Optional */
+	    font-family: arial;
+	    font-size: normal;
+	}
+	
+	nav > ul > li {
+	    display: inline-block;
+	    border-right: 1px solid white;
+	    height: 18px;
+	    width: 50px;
+	    /* Optional */
+	    padding: 10px 50px;
+	    cursor: pointer;
+	    border-left: 1px solid white;
+	}
+	
+	a,
+	nav {
+	    text-decoration: none;
+	    color: #fefefe;
+	}
+	
+	nav ul > li {
+	    list-style: none;
+	}
+	
+	nav > ul > li:last-child {
+	    border-right: none;
+	}
+	
+	nav ul li > ul {
+	    display: none;
+	}
+	
+	nav ul > li:hover {
+	    background-color: #cacaca;
+	    border: 1px solid #33f;
+	}
+	
+	nav ul li > ul li {
+	    position: relative;
+	    top: 12px;
+	    left: 12px;
+	    width: 80px;
+	    border-top: 1px solid white;
+	    padding: 18px;
+	    display: block;
+	    border-radius: 2px;
+	}
+	
+	nav, nav ul li > ul li {
+		background-color: #ababab;
+	}
+	nav ul li > ul li:last-child {
+	    border-bottom: 1px solid white;
+	}
+	
+	.active {
+	    display: table;
+	}

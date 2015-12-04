@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+</head>
+
+<body ng-app="starter">
+    <ion-nav-bar class="bar-calm">
+    </ion-nav-bar>
+    <ion-nav-view class="has-header"></ion-nav-view>
+    <ion-footer-bar class="bar-calm">
+        <!--     <i class="icon ion-android-arrow-back"></i>
+            <span class="tab-title ng-binding" ng-bind-html="title">About</span>
+         -->
+        <div class="buttons">
+            <button ng-if="showAlert" ng-click="showAlert()" class="button left">
+                <i class="icon ion-ios-information"></i>
+            </button>
+            <!-- <button ng-if="showAlert" ng-click="showAlert()" class="button right">
+                <i class="icon ion-ios-home"></i>
+            </button> -->
+        </div>
+    </ion-footer-bar>
+    <script type="text/ng-template" id="login.html">
+        <ion-view view-title="Login" ng-controller="loginCtrl">
+            <form class="list" name="myForm">
+                <label class="item item-input">
+                    <input type="email" placeholder="User Name" name="name" ng-model="user.name" required/>
+                </label>
+                <label class="item item-input">
+                    <input type="password" placeholder="Password" name="pwd" ng-model="user.pwd" required />
+                </label>
+                <button ng-show="myForm.$valid" value="Login" ng-click="auth()" class="button button-royal button-full">Login</button>
+                <label ng-if="!isAuth">Login Failed. Try again.</label>
+            </form>
+        </ion-view>
+    </script>
+    <!-- view-title="Rate Me" -->
+    <script type="text/ng-template" id="rate.html">
+        <ion-view view-title="Rate Me" ng-controller="rateCtrl" class="text-center">
+            <ion-nav-buttons side="primary">
+                <button class="button button-clear" ng-click="goBack()">
+                    <i class="ion-arrow-left-c"></i>
+                </button>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="secondary">
+                <button class="button button-clear secondary" ng-click="doRefresh()">
+                    <i class="ion-refresh"></i>
+                </button>
+            </ion-nav-buttons>
+            <button ng-click="addRating($index)" ng-repeat="r in rating" class="button-icon icon {{r.class}}"></button>
+            <div class="padding">
+                <p ng-hide="!getNumSel()">Thank You!</p>
+                <p ng-hide="getNumSel()">Please choose a rating</p>
+            </div>
+            <div class="padding" ng-if="showInfo">
+                <p>This is a simple rate Me App</p>
+            </div>
+        </ion-view>
+    </script>
+</body>
+
+</html>

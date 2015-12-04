@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ToDo</title>
+    <link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="../../jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../../handlebars.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <style type="text/css">
+    .hideIt {
+        display: none;
+    }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <h1 class="text-center">ToDo App</h1>
+            <button id="add" class="btn btn-default btn-success navbar-btn pull-right">Add ToDO</button>
+        </div>
+    </nav>
+    <div id="notodo" class="row">
+        <h1 class="text-center text-warning">There are no To-Dos. Try adding some!</h1> </div>
+    <div class="row">
+            <ul class="list-unstyled">
+            </ul>
+    </div>
+    <script id="addNew" type="text/x-handlebars-template">
+    <div class="row">
+        <li class="col-md-7 col-md-offset-2">
+            <input type="text" class="form-control" placeholder="Add To Do" /> </li>
+    </div>
+    </script>
+    <script id="todo" type="text/x-handlebars-template">
+    <div class="row">
+                <li class="hideIt">{{id}}</li>
+                <li class="col-md-offset-1 col-md-1 checkbox">
+                    <input type="checkbox" />
+                </li>
+                <li class="col-md-7">
+                    <h4>{{desc}}</h4>
+                    <input type="text" class="hideIt form-control" placeholder="Add To Do" /> </li>
+                <li class="col-md-1">
+                    <button class="editIt btn btn-default btn-block btn-primary">Edit</button>
+                </li>
+                <li class="col-md-1">
+                    <button class="deleteIt btn btn-default btn-block btn-danger">Delete</button>
+                </li>
+    </div>
+    </script>
+</body>
+
+</html>

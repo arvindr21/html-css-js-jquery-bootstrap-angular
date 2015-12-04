@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Layouts</title>
+	<style type="text/css">
+	.wrapper{
+		width: 991px;
+	}
+	.full-container{
+		width: 100%;
+		margin: 5px;
+	}
+	.heading{
+		height: 50px;
+	}
+	.main-content{
+		height: 300px;
+	}
+	.sub-container{
+		height: 200px;
+	}
+	.big-left{
+		width: 50%;
+		height: 100%;
+		float: left;
+		display: inline-block;
+	}
+	.small-elems{
+		width: 50%;
+		height: 100%;
+		float: right;
+		display: inline-block;
+	}
+	.row{
+		margin-top: 0px;
+		height: 49%;
+	}
+	.cells{		
+		width: 27%;
+		height: 100%;
+		display: inline-block;
+	}
+	.big-cells{		
+		width: 43%;
+		height: 100%;
+		display: inline-block;
+	}
+	.content{
+		clear: both;
+		height: 100px;
+	}
+	.footer{
+		height: 20px;
+	}
+	.grey{
+		background-color: #999;
+	}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<div class="heading grey full-container"></div>
+	<div class="main-content grey full-container"></div>
+	<div class="sub-container full-container">
+		<div class="big-left grey"></div>
+		<div class="small-elems">
+			<div class="row full-container">
+				<div class="cells grey"></div>
+				<div class="big-cells grey"></div>
+				<div class="cells grey"></div>
+			
+			</div>
+			<div class="row full-container">
+				<div class="cells grey"></div>
+				<div class="big-cells grey"></div>
+				<div class="cells grey"></div>
+			</div>
+		</div>
+	</div>
+	<div class="content grey full-container"></div>
+	<div class="footer grey full-container"></div>
+</div>
+</body>
+</html>

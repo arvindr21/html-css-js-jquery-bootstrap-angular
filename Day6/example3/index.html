@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bubbling</title>
+    <style type="text/css">
+    div{
+    	border: 1px solid black;
+        cursor: pointer;
+        margin: 0px;
+        padding: 0px;
+        font-weight: bold;
+        font-size: large;
+        color: white;
+        text-align: center;
+        padding-top: 50px;
+    }
+    .d1 {
+        width: 400px;
+        height: 400px;
+        background-color: red;
+        z-index: 1;
+    }
+    
+    .d2{
+        width: 55%;
+        height: 55%;
+        background-color: green;
+        z-index: 2;
+        margin: 0 auto;
+    }
+    .d3{
+    	width: 50%;
+        height: 50%;
+    	background-color: #750;
+        z-index: 3;
+        margin: 0 auto;
+    }
+    </style>
+</head>
+
+<body>
+<!-- <div class="d1" onclick="clicked(this)">1
+	<div  class="d2" onclick="clicked(this)">2
+		<div class="d3" onclick="clicked(this)">3</div>
+	</div>
+</div> -->
+    <div class="d1">1
+        <div class="d2">2
+            <div class="d3">3</div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    (function(){
+    	var divs = document.getElementsByTagName("div");
+    	var len = divs.length;
+    	// for(var i = 0; i < len; i++){
+    	// 	divs[i].addEventListener('click', clicked, false);
+    	// }
+    	divs[1].addEventListener('click', clicked, false);
+    	document.body.addEventListener('click', clicked, false);
+    })();
+    function clicked(evt) {
+    	var elem = this;
+        elem.style.backgroundColor = "yellow";
+        alert(elem.className);
+        elem.style.backgroundColor = "";
+    }
+    </script>
+</body>
+
+</html>

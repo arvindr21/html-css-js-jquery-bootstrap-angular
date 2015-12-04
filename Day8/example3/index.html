@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Bootstrap and JS</title>
+    <link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap.min.css" />
+    <script type="text/javascript" src="../../jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../../bootstrap/js/bootstrap.min.js"></script>
+    <style type="text/css">
+    .row > div {
+        height: 50px;
+        background-color: #911;
+        border: 1px solid white;
+    }
+    
+    .row > .white {
+        background-color: white;
+    }
+    </style>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        var i = 0,
+            j = 0,
+            col = "<div class='white col-md-{{num}}'></div>",
+            oneCol = "<div class='col-md-1'></div>",
+            fullCol = "<div class='col-md-12'></div>",
+            row = "<div class='row'></div>";
+        // $(".container").append(row);
+        // $(".row:last-of-type").append(fullCol);
+
+        for (i = 1; i < 12; i++) {
+            $(".container").append(row);
+            addOneCols(i);
+            $(".row:last-of-type").append(col.replace("{{num}}", 12 - i));
+        }
+        addOneCols(12);
+        for (i = 11; i >= 1; i--) {
+            $(".container").append(row);
+            addOneCols(i);
+            $(".row:last-of-type").append(col.replace("{{num}}", 12 - i));
+        }
+
+        // $(".container").append(row);
+        // $(".row:last-of-type").append(fullCol);
+
+        for (i = 1; i < 12; i++) {
+            $(".container").append(row);
+            $(".row:last-of-type").append(col.replace("{{num}}", 12 - i));
+            addOneCols(i);
+        }
+        addOneCols(12);
+        for (i = 11; i >= 1; i--) {
+            $(".container").append(row);
+            $(".row:last-of-type").append(col.replace("{{num}}", 12 - i));
+            addOneCols(i);
+        }
+        // $(".container").append(row);
+        // $(".row:last-of-type").append(fullCol);
+
+        function addOneCols(num) {
+            for (var j = 0; j < num; j++) {
+                $(".row:last-of-type").append(oneCol);
+            }
+        }
+    });
+    </script>
+</head>
+
+<body>
+    <div class="container"></div>
+</body>
+
+</html>

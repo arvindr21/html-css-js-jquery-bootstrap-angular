@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-md-7">
+        <form name="myForm">
+            <div class="form-group">
+                <label>Quantity</label>
+                <input type="number" placeholder="Quantity" name="qty" ng-model="qty" required />
+                <span class="alert-danger" ng-if="!qty">Please Enter a Valid Number</span>
+            </div>
+            <div class="form-group">
+                <label>Date</label>
+                <select class="form-control" name="selData" ng-model="selDate">
+                    <option value="Today" ng-selected="qty > 0">Today</option>
+                    <option value="Tomorrow">Tomorrow</option>
+                    <option value="Next Week">Next Week</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Book Now" ng-disabled="!myForm.$valid" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-5">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="lead">Review</p>
+                <span ng-repeat="i in getRange(movie.rating)" class="glyphicon glyphicon-star"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5"><img class="img-thumbnail" ng-src="{{movie.thumb}}" /></div>
+            <div class="col-md-7 text-justify pl"><b>{{movie.review}}</b></div>
+        </div>
+    </div>
+</div>
+</div>

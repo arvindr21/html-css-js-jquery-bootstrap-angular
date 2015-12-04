@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html ng-app="todoApp">
+<head>
+	<title>ToDo</title>
+	<link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap.min.css">
+	<style type="text/css">
+	.strike {
+		text-decoration: line-through;
+	}
+	.pad {
+		padding-top: 20px;
+	}
+	.blink {
+		text-decoration: blink;
+	}
+	</style>
+	<script type="text/javascript" src="../../angular.min.js"></script>
+	<script type="text/javascript">
+	var myApp = angular.module("todoApp", []);
+	
+	myApp.factory("DataStorage", function($window){
+		var key = "todoArr";
+		return {
+			getItem: function(){
+				return JSON.parse($window.localStorage.getItem(key)) || [];
+			},
+			setItem: function(item){
+				var str = JSON.stringify(item);
+				var str1 = str.replace(/,\"\$\$hashKey\":\"[a-zA-Z0-9:]+\"/, "");
+				str1 = str1.replace(/,\"editMode\":[true|false]./, "");
+				console.log("Replaced", str, "with", str1);
+				return $window.localStorage.setItem(key, JSON.stringify(item));
+			}
+		}
+	});
+
+	myApp.factory("ToDoList", function(DataStorage){
+		var todos = [];
+		return {
+			get: function() {
+				todos = DataStorage.getItem();
+				return todos;
+			},
+			post: function(todo){
+				//var item = { id: todo.id, desc: todo.desc };
+				todos.push(todo);
+				return DataStorage.setItem(todos);
+			},
+			put: function(index, todo){
+				//var item = { id: todo.id, desc: todo.desc };
+				todos[index] = todo;
+				return DataStorage.setItem(todos);
+			},
+			del: function(index){
+				todos.splice(index, 1);
+				return DataStorage.setItem(todos);
+			}
+		}
+	});
+	myApp.controller("todoCtrl", function ($scope, ToDoList) {
+		var uid = 0;
+		//$scope.todos = ToDoList.get(); // Since the reference is used, no need to update the array manually when content is changed!!
+		$scope.newToDo = "";
+		$scope.todos = ToDoList.get();
+		var editDesc = "";
+		//$scope.editMode = false;
+		$scope.addNewTodo = function($event){
+			var key = $event.keyCode || $event.which;
+			$scope.newToDo = $scope.newToDo.trim();
+			if(key === 13 && $scope.newToDo !== ""){
+				var todo = {
+					id: (uid++),
+					desc: $scope.newToDo,
+					isComplete: false
+					//editMode: false optional to add here
+				};
+				ToDoList.post(todo);
+				$scope.newToDo = "";
+			}
+		};
+		$scope.saveTodo = function(index, todo){
+			todo.editMode = false;
+
+			todo.desc = todo.desc.trim();
+			ToDoList.put(todo);
+		};
+		$scope.editTodo = function(index, todo){
+			editDesc = todo.desc;
+			todo.editMode = true;
+			//console.log("***", ToDoList.put(index, todo), "***");
+		};
+		$scope.deleteTodo = function(todo){
+			ToDoList.del(todo);
+		};
+		$scope.cancelEdit = function(index, todo){
+			//$scope.editDesc = todo.desc;
+			todo.desc = editDesc;
+			todo.editMode = false;
+			ToDoList.put(todo);
+		};
+		$scope.updateStatus = function(index, todo){
+			ToDoList.put(index, todo);
+			return todo.isComplete;
+		}
+	});
+	</script>
+</head>
+<body ng-controller="todoCtrl">
+	<div class="container">
+		<h1 class="text-center">ToDo App</h1>
+		<form name="myForm">
+		<input name="name" type="text" placeholder="Enter a new ToDo and press enter" class="form-control" ng-model="newToDo" ng-keypress="addNewTodo($event)" autofocus/>
+		</form>
+
+		<div class="container pad">
+			<ul class="list-unstyled" ng-repeat="todo in todos">
+				<div ng-hide="todo.editMode" class="row">
+					<li class="col-md-1"><input type="checkbox" ng-model="todo.isComplete" ng-checked="updateStatus($index, todo)"/></li>
+					<li class="col-md-5"><label ng-class="{strike: todo.isComplete}">{{todo.desc}}</label></li>
+					<li class="col-md-2"><button class="btn btn-primary btn-block" ng-click="editTodo($index, todo)" ng-disabled="todo.isComplete">Edit</button></li>
+					<li class="col-md-2"><button class="btn btn-danger btn-block" ng-click="deleteTodo($index)">Delete</button></li>
+				</div>
+				<div class="row" ng-show="todo.editMode">
+					<div class="row">
+					<li class="col-md-offset-1 col-md-5"><input type="text" placeholder="Edit ToDo and press enter" class="form-control" ng-model="todo.desc"/></li>
+					<li class="col-md-2"><button class="btn btn-primary btn-block" ng-disabled="!todo.desc.trim().length" ng-click="saveTodo($index, todo)">Save</button></li>
+					<li class="col-md-2"><button class="btn btn-warning btn-block" ng-click="cancelEdit($index, todo)">Cancel</button></li>
+					</div>
+					<div ng-show="!todo.desc.trim().length" class="row text-warning pad lead">
+						<div class="col-md-offset-1">
+							<p>Please enter a valid ToDo. Use delete to remove the item</p>
+						</div>
+					</div>
+				</div>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

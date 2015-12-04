@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dates</title>
+</head>
+<body>
+<script type="text/javascript">
+	function is_weekend (myDate) {
+		if ( 0 === myDate.getDay() ){
+			console.log("Yes");
+			return true;
+		}
+		return false;
+	}
+	function month_name(myDate){
+		var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June',
+					  'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+		console.log(months[myDate.getMonth()]);
+	}
+	function checkDate(d1,d2){
+		var time1 = d1.getTime();
+		var time2 = d2.getTime();
+		if(time1 > time2){
+			console.log(d1.toDateString(), "is later than", d2.toDateString(), "by", diffdays(d1,d2), "days" );
+		} else {
+			console.log(d2.toDateString(), "is later than", d1.toDateString(), "by", diffdays(d1,d2), "days");
+		}
+	}
+	function diffdays(d1,d2){
+		var time1 = d1.getTime();
+		var time2 = d2.getTime();
+		var diff = time1> time2? time1 - time2: time2 - time1;
+		var day = 24 * 60 * 60 * 1000;
+		return Math.floor(diff/day);
+	}
+	month_name(new Date("10/10/2012"));
+	is_weekend(new Date("11/22/2015"));
+	checkDate (new Date("10/11/2009"),new Date("10/11/2012") );
+</script>
+</body>
+</html>

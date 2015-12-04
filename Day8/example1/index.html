@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ajax</title>
+    <script type="text/javascript" src="../../jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="../../handlebars.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <table id="todoList" border="1">
+        <tr>
+            <th>S No.</th>
+            <th>Task</th>
+            <th>Status</th>
+            <th>Update</th>
+        </tr>
+    </table>
+    <script id="todo" type="text/x-handlebars-template">
+        <tr>
+            <td>{{id}}</td>
+            <td>{{title}}</td>
+            <td><img width="10" height="10" alt="{{completed}}" src=
+	            {{#if completed}} "tick.jpg"{{else}} "cross.jpg"{{/if}}
+	        /></td>
+            <td>
+                <input type="checkbox" {{#if completed}} checked {{/if}} />
+            </td>
+        </tr>
+    </script>
+</body>
+
+</html>

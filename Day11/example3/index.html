@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+	<title>Using Custom Apps</title>
+	<script type="text/javascript" src="../../angular.min.js"></script>
+	<script type="text/javascript">
+		var app = angular.module("MyApp", []);
+		app.config(function () {
+			console.log("The first config done!");
+		});
+		app.run(function($rootScope){
+			$rootScope.name = "Anjana";
+		});
+	</script>
+</head>
+<body>
+	<div>
+		<input type="text" placeholder="Enter Name Here" ng-model="name"/>
+		<label>{{name}}</label>
+	</div>
+</body>
+</html>

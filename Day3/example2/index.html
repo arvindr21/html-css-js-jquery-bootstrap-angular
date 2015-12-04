@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Layouts</title>
+	<style type="text/css">
+	.full-container{
+		width: 100%;
+		clear: both;	
+	}
+	.half-container{
+		width: 49%;
+		vertical-align: middle;
+	}
+	.container{
+		border-top: 5px solid black;
+		border-bottom: 5px solid black;
+		background-color: #004400;
+		overflow: auto;
+		margin: 5px;
+		padding: 5px;
+		position: relative;
+	}
+	.right{
+		text-align: right
+	}
+	.left-container{
+		float: left;
+	}
+	.right-container{
+		float: right;
+	}
+	.form-elem{
+		padding: 2px;
+		margin: 5px;
+		color: white;
+		font-family: "Courier New";
+		font-size: 10pt;
+	}
+	input[type="text"], input[type="email"]{
+		margin-left: 5px;
+		width: 95%;
+	}
+	select{
+		width: 60%;
+		color: #333;
+	}
+	input{
+		background-color: #00aa00;
+		border: 1px solid black;
+		margin: 5px;
+		padding: 2px;
+	}
+	.form-elem-button{
+		padding: 2px;
+	}
+	.form-button{
+		margin: 0 auto;
+		text-align: center;
+		margin: 2px;
+	}
+	.row-container{
+		height: 50%;
+	}
+	p{
+		padding: 0px;
+		margin: 0px;
+	}
+	.embolden{
+		font-weight: bold;
+	}
+	.right-border{
+		border-right: 1px solid white;
+	}
+	.center{
+		text-align: center;
+	}
+	</style>
+</head>
+<body>
+<div class="container half-container">
+	<form action="#" method="get">
+		<div class="full-container">
+			<div class="half-container left-container">
+				<p class="right form-elem">First Name: </p>
+			</div>
+			<div class="half-container right-container">
+				<input type="text" name="fName" />
+			</div>
+		</div>
+		<div class="full-container">
+			<div class="half-container left-container">
+				<p class="right form-elem">Last Name: </p>
+			</div>
+			<div class="half-container right-container">
+				<input type="text" name="lName" />
+			</div>
+		</div>
+		<div class="full-container">
+			<div class="half-container left-container">
+				<p class="right form-elem">E-mail: </p>
+			</div>
+			<div class="half-container right-container">
+				<input type="email" name="email" />
+			</div>
+		</div>
+		<div class="full-container">
+			<div class="half-container left-container">
+				<p class="right form-elem">I like socks:</p>
+			</div>
+			<div class="half-container right-container">
+				<div class="right-border center half-container left-container">
+				<input type="radio" name="likeSocks" value="yes"/><label class="form-elem">Yes </label>
+				</div>
+				<div class="half-container  center right-container">
+				<input type="radio" name="likeSocks" value="no"/><label class="form-elem">No</label>
+				</div>
+			</div>
+		</div>
+		<div class="full-container">
+			<div class="half-container left-container">
+				<p class="right form-elem">Sock colors that I like: </p>
+			</div>
+			<div class="half-container right-container form-elem-button">
+				<!-- <div class="row-container">
+					<input type="checkbox" name="red" /><label class="form-elem">Red</label>
+					<input type="checkbox" name="blue" /><label class="form-elem">Blue</label>
+				</div>
+				<div class="row-container">
+					<input type="checkbox" name="black" /><label class="form-elem">Black</label>
+					<input type="checkbox" name="yellow" /><label class="form-elem">Yellow</label>
+				</div> -->
+				<div class="half-container left-container">
+					<div><input type="checkbox" name="red" /><label class="form-elem">Red</label></div>
+					<div><input type="checkbox" name="black" /><label class="form-elem">Black</label></div>
+				</div>
+				<div class="half-container right-container">
+					<div><input type="checkbox" name="blue" /><label class="form-elem">Blue</label></div>
+					<div><input type="checkbox" name="yellow" /><label class="form-elem">Yellow</label></div>
+				</div>
+			</div>
+		</div>
+		<div class="full-container">
+			<div class="half-container left-container">
+				<p class="right form-elem">Sock colors that I <span class="embolden">dislike</span>: </p>
+			</div>
+			<div class="half-container right-container form-elem-button">
+				<!-- <div class="row-container">
+					<input type="checkbox" name="silver" /><label class="form-elem">Silver</label>
+					<input type="checkbox" name="tan" /><label class="form-elem">Tan</label>
+				</div>
+				<div class="row-container">
+					<input type="checkbox" name="salad" /><label class="form-elem">Salad</label>
+					<input type="checkbox" name="garnet" /><label class="form-elem">Garnet</label>
+				</div> -->
+				<div class="half-container left-container">
+					<div><input type="checkbox" name="silver" /><label class="form-elem">Silver</label></div>
+					<input type="checkbox" name="salad" /><label class="form-elem">Salad</label>
+				</div>
+				<div class="half-container right-container">
+					<div><input type="checkbox" name="tan" /><label class="form-elem">Tan</label></div>
+					<input type="checkbox" name="garnet" /><label class="form-elem">Garnet</label>
+				</div>
+			</div>
+		</div>
+		<div class="full-container">
+			<div class="half-container left-container">
+				<p class="right form-elem">Least favourite sock color: </p>
+			</div>
+			<div class="half-container right-container form-elem-button center">
+				<select name="leastFav">
+					<option value="orange">Orange</option>
+				</select>
+			</div>
+		</div>
+		<div class="full-container">
+			<div class="half-container left-container form-button">
+				<input type="submit" value="Submit me" />
+			</div>
+			<div class="half-container right-container form-button">
+				<input type="reset" value="Clear" />
+			</div>
+		</div>
+	</form>
+</body>
+</html>

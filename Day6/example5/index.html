@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>GMAIL</title>
+    <script type="text/javascript" src="../../jquery-2.1.4.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <style type="text/css">
+    * {
+        font-family: 'Open Sans', arial;
+    }
+    
+    .heading {
+        text-align: center;
+        margin: 0 auto;
+        color: #555;
+    }
+    
+    .heading h1{
+    	font-weight: 300;
+    	font-size: 38px;
+    }
+    .heading h2{
+    	font-weight: 400;
+    	font-size: 18px;
+    }
+    .login {
+        width: 400px;
+        margin: 10px auto;
+        overflow: hidden;
+        background-color: #f7f7f7;
+    }
+    
+    .man {
+        position: relative;
+        margin: 0 auto;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin: 0 auto;
+        background-color: #cecece;
+    }
+    
+    .grey {
+        background-color: #aeaeae;
+    }
+    
+    .circle-big {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin: 0 auto;
+    }
+    
+    .bevel {
+        position: relative;
+        top: 0px;
+        width: 130px;
+        height: 50px;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        margin: 20px auto;
+        margin-top: 10px auto;
+        overflow: hidden;
+    }
+    
+    .inputs {
+        text-align: center;
+    }
+    
+    input{
+        width: 80%;
+        padding: 2px 6px 3px;
+        margin: 5px;
+        color: #404040;
+        border-radius: 1px;
+        background: #fff;
+        font-size: 16px;
+        text-rendering: auto;
+	    letter-spacing: normal;
+	    word-spacing: normal;
+	    text-transform: none;
+	    text-indent: 0px;
+	    text-shadow: none;
+    }
+    
+    input[type="email"]:hover, input[type="password"]:hover{
+    	border: 1px solid #b9b9b9;
+        box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+    }
+    input[type="submit"] {
+    	font-family: 13px arial;
+        cursor: pointer;
+        border: 1px solid #3079ed;
+	    color: #fff;
+	    text-shadow: 0 1px rgba(0,0,0,0.1);
+	    background-color: #4d90fe;
+	    background-image: -webkit-linear-gradient(top,#4d90fe,#4787ed);
+    }
+    
+    input[type="checkbox"] {
+        width: 15px;
+        height: 15px;
+    }
+    
+    .error {
+        color: red;
+    }
+    
+    .error,
+    #password,
+    #staySigned,
+    #arrow {
+        display: none;
+    }
+    
+    .right {
+        float: right;
+    }
+    
+    .center {
+        text-align: center;
+    }
+    
+    .greyTxt {
+        color: #aaa;
+    }
+    
+    .logo-strip {
+        margin: 0 auto;
+        width: 230px;
+        height: 17px;
+        background-image: url("logostrip.png");
+        background-repeat: no-repeat;
+    }
+    
+    .largeTxt {
+        font-size: 38px;
+        font-weight: 300;
+    }
+    
+    footer {
+        background-color: #eee;
+        margin: 0px;
+        padding: 0px;
+        margin-top: 40px;
+    }
+    
+    footer nav ul {
+        list-style: none;
+    }
+    
+    footer nav ul,
+    footer nav ul li {
+        display: inline-block;
+        margin: 0px;
+        padding: 5px;
+    }
+    
+    footer nav select {
+        float: right;
+        margin-top: 10px;
+        margin-right: 5px;
+    }
+    
+    footer nav ul li a {
+        text-decoration: none;
+        color: #999;
+        padding: 20px;
+        padding-left: 0px;
+        font-size: small;
+    }
+    
+    .left {
+        float: left;
+    }
+    
+    html,
+    body,
+    #staySigned,
+    #help,
+    div {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    .clear {
+        clear: both;
+    }
+    
+    #arrow {
+        margin: 2px;
+        padding: 2px;
+        cursor: pointer;
+    }
+    </style>
+</head>
+
+<body>
+    <script type="text/javascript">
+    $("document").ready(function() {
+
+        $("#submit").click(function(evt) {
+            var email = $("#email").val().trim();
+            $(".error").hide();
+            if (validateEmail(email)) {
+                showPwdMenu();
+            } else {
+                $(".error").show();
+                $("#email").css("border", "1px solid red");
+            }
+        });
+        $("#email").keyup(function() {
+            if (!this.value) {
+                $("#email").css("border", "1px solid violet");
+            }
+        });
+        $("#arrow").click(function(evt) {
+            showInitialMenu();
+        });
+    });
+
+    function showInitialMenu() {
+        $("#email").val("");
+        $("#email").show();
+        $("#password").hide();
+        $("#arrow").hide();
+        $("#staySigned").hide();
+        $("#account").html("<a href=''>Create an Account</a>");
+        $("#valPassword").text("");
+        $("#help").html("<label><a href='' >Need help?</a></label>");
+        $("#submit").val("Next");
+        $("#submit").unbind();
+        $("#submit").click(function(evt) {
+            var email = $("#email").val().trim();
+            $(".error").hide();
+            if (validateEmail(email)) {
+                showPwdMenu();
+            } else {
+                $(".error").show();
+                $("#email").css("border", "1px solid red");
+            }
+        });
+    }
+
+    function validateEmail(email) {
+        var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+        return re.test(email);
+    }
+
+    function showPwdMenu() {
+        var email = $("#email").val().trim();
+        $("#email").hide();
+        $("#staySigned").show();
+        $("#arrow").show();
+        $("#account").html("<a href=''>Sign in with a different account</a>");
+        $("#valPassword").text(email).show();
+        $("#password").show();
+        $("#help").html("<label><a href='' >Forgot Password?</a></label>");
+        $("#submit").val("Sign in");
+        $("#submit").unbind();
+        $("#submit").click(function(evt) {
+            //alert("Signing in. please wait...");
+            $("*").css("cursor", "wait");
+        });
+    }
+    </script>
+    <div class="container">
+        <div class="heading">
+            <div><img src="googlelogo.png" alt="Logo" /></div>
+            <h1 class="largeTxt">One account. All of Google.</h1>
+			<h2>Sign in to continue to Gmail</h2>
+		</div>
+		<div class="login">
+			<div id="arrow" class="left"><img src="arrow.png" alt="Go Back"/></div>
+			<div class="man">
+				<div class="circle-big grey"></div>
+				<div class="bevel grey"></div>
+			</div>
+			<div class="inputs">
+				<div><label id="valPassword"></label></div>
+				<div><input type="email" id="email" placeholder="Enter your email" autofocus/></div>
+				<div><input type="password" id="password" placeholder="Enter your password"/></div>
+				<div><label class="error">Sorry, Google doesn't recognize that email.</label></div>
+				<div><input type="submit" id="submit" value="Next"/></div>
+				<div id="help" class="right"><a href="#"><label>Need Help?</label></a></div>
+				<div id="staySigned" class="left"><input type="checkbox" name="staySigned" checked/><label>Stay signed in</label></div>
+			</div>
+		</div>
+		<div class="clear center" id="account"><a href="#">Create an Account?</a></div>
+		<div class="center"><p class="greyTxt">One Google Account for everything Google</p></div>
+		<div class="logo-strip"></div>
+		<footer>
+			<nav>
+				<ul>
+					<li><a href="">About Google</a></li>
+					<li><a href="">Privacy</a></li>
+					<li><a href="">Terms</a></li>
+					<li><a href="">Help</a></li>
+				</ul>
+				<select name="language">
+					<option>English (United States)</option>
+				</select>
+			</nav>
+		</footer>
+	</div>
+</body>
+</html>

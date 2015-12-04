@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<form action="index.html" method="get">
+	<p><label>Name</label><input type="text" name="name" placeholder="Enter your name" /></p>
+	<p><label>eMail</label><input type="email" name="email" placeholder="Enter your e-mail"/></p>
+	<p><label>DoB</label><input type="date" name="dob" placeholder="Enter your Date of Birth"/></p>
+	<p><label>Fav Color</label><input type="color" name="color" placeholder="Enter your Fav Color"/></p>
+	<p><label>Week</label><input type="week" name="week" placeholder="Enter your Week"/></p>
+	<p>
+		<label>Gender</label>
+		<input type="radio" name="gender" value="M"/><label>Male</label>
+		<input type="radio" name="gender" value="F"/><label>Female</label>
+	</p>
+	<p><label>Files</label><input type="file" name="file" placeholder="Choose file"/></p>
+	<p>
+		<label>Choose your interests</label>
+		<input type="checkbox" name="movies" checked>Movies
+		<input type="checkbox" name="music">Music
+		<input type="checkbox" name="TV Shows">TV Shows
+	</p>
+	<p>
+		<label>Choose your fav destination</label>
+		<select name="dest" disabled>
+			<option value="Amsterdam">Amsterdam</option>
+			<option value="Bahamas">Bahamas</option>
+		</select>
+	</p>
+	<p>
+		<label>Enter special requirements here</label>
+		<textarea rows="5" cols="40" placeholder="Special Requirements"></textarea>
+	</p>
+	<p>
+		<input type="submit" value="Click to Submit"/>
+		<input type="reset" value="Click to Cancel">
+	</p>
+</form>
+
+</body>
+</html>

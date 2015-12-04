@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Stars</title>
+</head>
+<body>
+<script type="text/javascript">
+	var star = '*';
+	var sp = ' ';
+	function stars (count) {
+		if(count > 5){
+			return;
+		} else{
+			console.log(sp.repeat(5-count) + star.repeat(count));
+			stars(++count);
+		}
+		
+	}
+	stars(1);
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+a.violet, div{
+		color: violet;
+		font-size: 2em;
+	}
+a#maroon {
+		color: maroon;
+	}
+div{
+	background-color: blue;
+}

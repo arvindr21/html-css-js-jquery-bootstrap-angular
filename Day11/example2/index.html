@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>Label to TextBox</title>
+	<script type="text/javascript" src="../../angular.min.js"></script>
+</head>
+<body ng-init="name='Anjana'">
+	<div ng-hide="editMode">
+		<p>{{name}}</p>
+		<input type="button" value="Edit" ng-click="editMode=true"/>
+	</div>
+	<div ng-hide="!editMode">
+	<div>
+		<!-- <input type="text" placeholder="Enter text here" ng-model="name"/> -->
+		<textarea ng-model="name" rows="8" cols="40" placeholder="Enter text here"></textarea>
+	</div>
+		<input type="button" value="Done" ng-click="editMode=false"/>
+	</div>
+
+</body>
+</html>

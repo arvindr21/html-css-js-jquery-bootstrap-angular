@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS date</title>
+</head>
+<body>
+	<script type="text/javascript">
+	var now = new Date();
+	var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+				  'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+	var month = now.getMonth() + 1;
+	var fullDate = now.getDate() + '-' + month + '-' + now.getFullYear();
+	console.log(fullDate);
+	var time = now.getHours() + ':' + now.getMinutes();
+	console.log(fullDate + ' ' + time);
+	var fulltime = time + ':' + now.getSeconds();
+	console.log(fullDate + ' ' + fulltime);
+	console.log(now.toDateString());
+	console.log(now.getDate() + '-' + months[now.getMonth()]+ '-' + now.getFullYear());
+	</script>
+
+</body>
+</html>

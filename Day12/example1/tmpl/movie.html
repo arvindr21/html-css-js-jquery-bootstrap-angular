@@ -1,0 +1,18 @@
+<div>
+    <div class="row">
+        <div class="col-md-1 col-md-offset-11">
+            <a href="/#/home" role="button" class="btn btn-primary">Back</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 list">
+            <h2>{{movie.name}}</h2>
+            <img ng-src="{{movie.thumb}}" alt="{{movie.name}}">
+        </div>
+        <div class="col-md-8 pad">
+        	<p class="lead">Review</p>
+            <span ng-repeat="i in getRange(movie.rating)" class="glyphicon glyphicon-star"></span>
+        	<p class="text-justify"><b>{{movie.review}}</b></p>
+        </div>
+    </div>
+</div>

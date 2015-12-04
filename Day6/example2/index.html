@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dynamic </title>
+    <script type="text/javascript">
+    window.onload = function() {
+        // 	var a = document.getElementsByTagName("a")[0];
+        // 	a.href = "http://yahoo.com";
+        // 	a.innerHTML = "Yahoo!";
+    }
+    </script>
+</head>
+
+<body>
+    <a href="http://google.com" id="link">Google</a>
+    <button id="button">Click ME</button>
+    <script type="text/javascript">
+    var button = document.getElementById("button");
+    button.addEventListener("click", evtHandler, false);
+    var numClicks = 0;
+
+    function evtHandler(evt) {
+        var myButton = this;
+        numClicks++;
+        this.style.backgroundColor = "#999";
+        if (numClicks === 2) {
+            this.style.backgroundColor = "#ccc";
+            button.removeEventListener("click", evtHandler, false);
+        }
+        console.log(evt);
+    }
+    var myLink = document.getElementById("link");
+    myLink.addEventListener("click", checkLink, false);
+
+    function checkLink(evt) {
+        console.log(evt);
+        // evt.preventDefault();
+        // location.href = "http://bing.com";
+
+        var now = new Date();
+        if (now.getHours() >= 12) {
+            evt.target.href = "http://google.co.uk";
+        }
+    }
+    </script>
+</body>
+
+</html>

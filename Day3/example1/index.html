@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Layout</title>
+	<style type="text/css">
+	html,body{
+		margin: 0 auto;
+	}
+	.wrapper{
+		width: 1024px;
+	}
+	.grey{
+		background-color: #999;
+	}
+	.full-container{
+		width: 100%;
+		margin: 15px;
+	}
+	.heading{
+		height: 40px;
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+	.main-content{
+		height: 150px;
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+	.sub-container{
+		height: 150px;
+		margin: 0 auto;
+		width: 97%;
+	}
+	.small-left-col{
+		width: 32%;
+		display: inline-block;
+		height: 100%;
+		margin-right: 15px;
+	}
+	.big-right-col{
+		display: inline-block;
+		margin: 0px auto;
+		height: 100%;
+		width: 66%;
+		
+	}
+	.top-row, .bottom-row{
+		clear: both;
+		height: 45%;
+		width: 100%;
+		
+	}
+	.bottom-row{
+		margin-top: 15px;
+	}
+	.cells{
+		width: 49%;
+		height: 100%;
+		display: inline-block;
+	}
+	.left{
+		float: left;
+	}
+	.right{
+		float: right;
+	}
+	.footer{
+		height: 50px;
+		clear: both;
+		margin: 15px;
+	}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<div class="heading grey full-container"></div>
+	<div class="grey main-content full-container"></div>
+	<div class="sub-container">
+		<div class="small-left-col grey"></div>
+		<div class="big-right-col">
+			<div class="top-row grey"></div>
+			<div class="bottom-row">
+				<div class="cells left grey"></div>
+				<div class="cells right grey"></div>
+			</div>
+		</div>
+	</div>
+	<div class="footer grey"></div>
+</div>
+</body>
+</html>

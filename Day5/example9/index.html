@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign Out</title>
+</head>
+<body>
+<script type="text/javascript">
+	
+	function signOut_ternary (a,b,c) {
+		var prod = a * b * c;
+		var message = prod >= 0 ? "The sign is +": "The sign is -";
+		console.log(message);
+	}
+	function signOut (a,b,c) {
+		var signs = [];
+		signs.push(Math.sign(a),Math.sign(b),Math.sign(c));
+		console.log(signs);
+		var count = signs.filter(function(e,i,l){
+			return e < 0;
+		});
+
+		console.log(count.length);
+		var message = count.length & 1 ? "The sign is -": "The sign is +";
+		console.log(message);
+	}
+	signOut(12,-2,-1);
+	signOut(12,5,1);
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+	<title>Label and Text box Again</title>
+	<script type="text/javascript" src="../../angular.min.js"></script>
+	<script type="text/javascript">
+	var app = angular.module("MyApp", []);
+	app.controller("NameCtrl", function ($scope) {
+		$scope.name = "Anjana";
+		$scope.editMode = false;
+		var backupName = $scope.name; //Private scope here, not accessible outside controller
+		$scope.setEditMode = function(){
+			backupName = $scope.name;
+			$scope.editMode = true;
+		};
+		$scope.resetEditMode = function(){
+			$scope.editMode = false;
+		};
+		$scope.cancelSave = function(){
+			$scope.name = backupName;
+		}
+	});
+	app.controller("emailCtrl", function ($scope) {
+		$scope.email = "a.a@a.com";
+		$scope.editMode = false;
+		$scope.setEditMode = function(){
+			$scope.editMode = true;
+		};
+		$scope.resetEditMode = function(){
+			$scope.editMode = false;
+		};
+	});
+	</script>
+</head>
+<body>
+	<div ng-controller="NameCtrl">
+		<div ng-hide="editMode">
+			<label>{{name}}</label>
+			<input type="button" value="Edit" ng-click="setEditMode()" />
+		</div>
+		<div ng-hide="!editMode">
+			<input type="text" placeholder="Enter Name here" ng-model="name"/>
+			<input type="button" value="Save" ng-click="resetEditMode()" />
+			<input type="button" value="Cancel" ng-click="cancelSave()" />
+		</div>
+	</div>
+	
+	<div ng-controller="emailCtrl">
+		<div ng-hide="editMode">
+			<label>{{email}}</label>
+			<input type="button" value="Edit" ng-click="setEditMode()" />
+		</div>
+		<div ng-hide="!editMode">
+			<input type="text" placeholder="Enter Name here" ng-model="email"/>
+			<input type="button" value="Save" ng-click="resetEditMode()" />
+		</div>
+	</div>
+</body>
+</html>

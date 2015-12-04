@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vowels</title>
+</head>
+<body>
+<script type="text/javascript">
+	
+	function getVowels (str) {
+		var vow = "aeiou";
+		var count = {
+			a: 0,
+			e: 0,
+			i: 0,
+			o: 0,
+			u: 0
+		};
+		for(var i = 0; i < vow.length; i++){
+			count[vow[i]] = str.split(vow[i]).length - 1;
+		}
+		console.log(count);
+	}
+	getVowels("This is a long sentence");
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animation</title>
+	<style type="text/css">
+	.cube{
+		width: 500px;
+		height: 500px;
+		background-color: #aaa;
+	}
+	.side{
+		width: 100px;
+		height: 100px;
+		border: 1px solid black;
+		text-align: center;
+		font-size: 250%;
+		line-height: 100px;
+		color: #fff;
+		display: inline-block;
+		transition: transform 2s;
+		/*transform: translate(400px, 400px);*/
+	}
+	/*#side1{
+		animation-name: sideA;
+		animation-duration: 5s;
+		
+		animation-iteration-count: infinite;
+		
+		-webkit-animation-name: sideA;
+		-webkit-animation-delay: 2s;
+	}*/
+	/*@keyframes sideA{
+		0% { transform: rotateY(90deg) translate(400px, 100px);}
+		25%{ transform: rotateY(180deg) translate(400px, 100px);}
+		50%{ transform: rotateY(270deg) translate(400px, 100px);}
+		100%{ transform: rotateY(360deg) translate(400px, 100px);}
+	}*/
+/*	@keyframes sideA{
+		0% { transform: rotateY(90deg);}
+		25%{ transform: rotateY(180deg);}
+		50%{ transform: rotateY(270deg);}
+		100%{ transform: rotateY(360deg);}
+	}*/
+	</style>
+</head>
+<body>
+<div class="cube">
+	<div id="side1" class="side">1</div>
+	<!-- <div id="side2" class="side">2</div>
+	<div id="side3" class="side">3</div>
+	<div id="side4" class="side">4</div>
+	<div id="side5" class="side">5</div>
+	<div id="side6" class="side">6</div> -->
+</div>
+</body>
+</html>

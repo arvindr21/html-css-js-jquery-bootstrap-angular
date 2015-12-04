@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Sort</title>
+</head>
+<body>
+<script type="text/javascript">
+	function sortString_opt(val){
+		if(typeof val === "string" && val.length > 0 && val.split(' ').length === 1){
+			val = val.split('').sort().join('');
+			console.log(val);
+		} else {
+			console.log(JSON.stringify(val)+ " is not a proper input");
+		}
+	}
+
+	function sortString(val){
+		if(typeof val === "string" && val.length > 0 && val.split(' ').length === 1){
+			var len = val.length;
+			var out = [];
+			var min = '';
+			var out = val.split('');
+			for(var i = 0; i < len; i++){
+				min = out[i];
+				for(var j = i+1; j < len; j++){
+					if(min.charCodeAt(0) > out[j].charCodeAt(0)){
+						min = out[j];
+						out[j] = out[i];
+						out[i] = min;
+					}
+				}
+				
+			}
+			console.log(out.join(''));
+		} else {
+			console.log(JSON.stringify(val)+ " is not a proper input");
+		}
+	}
+
+	sortString("Anjana");
+	sortString("Able Elba");
+	sortString(1);
+	sortString([]);
+	sortString(-1);
+	sortString(5);
+	sortString(0);
+	sortString(true);
+	sortString(false);
+	sortString("");
+	sortString({});
+	sortString(NaN);
+	sortString(undefined);
+</script>
+</body>
+</html>

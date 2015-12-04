@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Hello World</title>
+	
+</head>
+<body>
+	<script type="text/javascript">
+		<!--
+		document.write('Hello World!');
+		//-->
+		var a = 2, b = 4;
+		var c = a + b;
+		console.log('', a, '+', b, '=', c);
+		function add (x,y) {
+			var a = x || 0;// Fail safe mechanism if the x or y are not passed
+			var b = y || 0;
+			return a + b;
+		}
+		var c = add(12,3);
+		console.log(c);
+
+		var a = 1, b = 0, c = '1 ', d = 2;
+		console.log(a==b);
+		console.log(a!=b);
+		console.log(a == c);
+		console.log(a === c);
+		console.log(a !== c);
+		console.log(a === parseInt(c));
+		console.log(a > d);
+		console.log( d > c);
+		console.log(a <= c);
+		console.log(a == true);
+	</script>
+</body>
+</html>

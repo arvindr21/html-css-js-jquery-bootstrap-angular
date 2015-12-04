@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Playing with Forms</title>
+	<style type="text/css">
+	.inline{
+		display: inline-block;
+		width: 100px;
+		padding: 6px;
+	}
+	.inline label, input{
+		font-family: "Helvetica";
+		font-size: 12pt;
+		font-style: italic;
+		color: #a46;
+	}
+	input[type="button"]{
+		background-color: #5ba;
+		border: none;
+		padding: 9px;
+		font-weight: bold;
+		border-radius: 20px;
+		cursor: pointer;
+	}
+	.red{
+		color: red;
+	}
+	.green{
+		color: green;
+	}
+	</style>
+
+</head>
+<body>
+	<form>
+		<div>
+			<div class="inline"><label>E-Mail</label></div>
+			<div class="inline"><input type="email" name="email" id="email"/></div>
+		</div>
+		<div>
+			<div class="inline"><label>Password</label></div>
+			<div class="inline"><input type="password" name="pwd" id="pwd"/></div>
+		</div>
+		<div>
+			<input type="button" value="Click here to submit" onclick="getIn()" />
+		</div>
+	</form>
+	<output id="out"></output>
+	<script type="text/javascript">
+	/*
+		document.getElementById('submit').onclick = function(){};
+	*/
+	// var output = document.createElement('label'); //Created only once if this is here
+	function getIn () {
+		var email = document.getElementById("email").value;
+		var pwd = document.getElementById("pwd").value;
+		var outColor = ["red", "green"];
+		// console.log(email, pwd);
+
+		// email = document.getElementsByName("email")[0].value;
+		// pwd = document.getElementsByName("pwd")[0].value;
+		// console.log(email, pwd);
+		// alert(email.trim().length > 1 && pwd.trim().length >1);
+		
+		// document.body.innerHTML += (email.trim().length > 1 && pwd.trim().length > 1);
+
+		var output = document.getElementById("Output");
+		if(output){
+			output.parentElement.removeChild(output);
+		} 
+		output = document.createElement('label');
+		output.id = "Output";
+
+		
+		//var output = document.createElement('label');
+		var valid = (email.trim().length > 1 && pwd.trim().length >1);
+		output.textContent = valid;
+		//output.style.color = outColor[valid * 1];
+		output.className = valid? "green" : "red";
+		// if (document.body.lastElementChild.tagName === "LABEL"){
+		// 	document.body.removeChild(document.body.lastElementChild);
+		// }
+		document.body.appendChild(output);
+		
+		// document.getElementById("out").innerHTML = (email.trim().length > 1 && pwd.trim().length >1);
+	}
+	</script>
+</body>
+</html>

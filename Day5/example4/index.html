@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Longest word</title>
+</head>
+<body>
+<script type="text/javascript">
+	
+	function longestWord_pgm (val) {
+		if(typeof val === "string" && val.length > 0){
+			var arr = val.split(' ');
+			var max_len = 0;
+			var found = 0;
+			for(var i = 0; i < arr.length; i++){
+				if(max_len < arr[i].length){
+					max_len = arr[i].length;
+					found = i;
+				}
+			}
+			console.log("Longest Word in \"", val,  "\" is", arr[found]);
+		} else{
+			console.log('' + JSON.stringify(val), "is not a valid input");
+		}
+	}
+	function longestWord (val) {
+		if(typeof val === "string" && val.length > 0){
+			var arr = val.split(' ');
+			var max_len = 0;
+			var found = 0;
+			arr.forEach( function(e, i, list){
+				if(max_len < e.length){
+					max_len = e.length;
+					found = i;
+				}
+			});
+			console.log("Longest Word in \"", val,  "\" is", arr[found]);
+		} else{
+			console.log('' + JSON.stringify(val), "is not a valid input");
+		}
+	}
+	longestWord("My name is Anjana");
+	longestWord("Able Elba");
+	longestWord(1);
+	longestWord([]);
+	longestWord(-1);
+	longestWord(5);
+	longestWord(0);
+	longestWord(true);
+	longestWord(false);
+	longestWord("");
+	longestWord({});
+	longestWord(NaN);
+	longestWord(undefined);
+</script>
+</body>
+</html>

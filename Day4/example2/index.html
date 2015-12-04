@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Objects</title>
+</head>
+<body>
+<script type="text/javascript">
+	var user = {
+		fName: "John",
+		lName: "Doe",
+		sayHello: function () {
+			return "Hello ";
+		},
+		fullName: function () {
+			return this.fName + " " + this.lName;
+		}
+	};
+	console.log(user.sayHello() + user.fullName());
+</script>
+</body>
+</html>

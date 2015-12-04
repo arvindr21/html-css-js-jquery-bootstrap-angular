@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="MyApp">
+<head>
+	<title>S.P.A</title>
+	<link rel="stylesheet" type="text/css" href="../../bootstrap/css/bootstrap.min.css">
+	<script type="text/javascript" src="../../angular.min.js"></script>
+	<script type="text/javascript" src="../../angular-route.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<style type="text/css">
+	.starter-template {
+	  	padding: 40px 15px;
+  		text-align: center;
+	}
+	body {
+ 		padding-top: 50px;
+	}
+	</style>
+</head>
+<body>
+<!-- <nav class="navbar navbar-inverse navbar-fixed-top">
+	<ul class="nav navbar-nav">
+		<li><a href="#" class="navbar-brand">S.P.A</a></li>
+		<li><a href="#" class="active">Home</a></li>
+		<li><a href="#/about">About</a></li>
+		<li><a href="#/contact">Contact</a></li>
+	</ul>
+</nav> -->
+	<nav class="navbar navbar-inverse navbar-fixed-top" ng-controller="MyCtrl">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a ng-class="{active: isActive('/')}" class="navbar-brand" ng-href="#">Project name</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li ng-class="{active: isActive('/home')}"><a ng-href="#">Home</a></li>
+            <li ng-class="{active: isActive('/about')}"><a ng-href="#about">About</a></li>
+            <li ng-class="{active: isActive('/contact')}"><a ng-href="#contact">Contact</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+<div ng-view></div>
+<script id="home.html" type="text/ng-template">
+	<div class="starter-template" ng-model="h">
+		<h1 class="text-center">Bootstrap Starter Template</h1>
+		<p class="text-center lead">Use this document as a way to quickly start any new project with a single page architecture!<br>
+		All you get is this text and a mostly barebones HTML document</p>
+	</div>
+</script>
+
+<script id="about.html" type="text/ng-template">
+	<div class="starter-template">
+		<h1 class="text-center">About Us</h1>
+		<p class="text-center lead">Use this document as a way to quickly start any new project<br>
+		All you get is this text and a mostly barebones HTML document</p>
+	</div>
+</script>
+
+<script id="contact.html" type="text/ng-template">
+	<div class="starter-template">
+		<h1 class="text-center">Contact Us</h1>
+		<p class="text-center lead">Use this document as a way to quickly start any new project<br>
+		All you get is this text and a mostly barebones HTML document</p>
+	</div>
+</script>
+</body>
+</html>

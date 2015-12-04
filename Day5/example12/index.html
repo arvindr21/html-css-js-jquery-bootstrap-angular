@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random</title>
+</head>
+<body>
+<script type="text/javascript">
+function randomStr () {
+	var alphabet = "abcdefghijklmnopqrstuvwxyz0123456789";
+	var len = alphabet.length;
+	var msg = '';
+	for(var i = 0; i < 7; i++){
+		msg += alphabet[Math.floor(Math.random() * len )];
+	}
+	console.log(msg);
+}
+////Math.random().toString(36).substring(2,7);
+randomStr();
+randomStr();
+randomStr();
+randomStr();
+randomStr();
+</script>
+</body>
+</html>
